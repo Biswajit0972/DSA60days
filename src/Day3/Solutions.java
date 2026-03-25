@@ -65,7 +65,15 @@ public class Solutions {
         System.out.println(n);
     }
 
+    static int sumOfn (int n) {
+        if (n == 0) {
+            return  0;
+        }
+
+        return n  + sumOfn(n-1);
+    }
+
     public static void main(String[] args) {
-      S
+        System.out.println(Solutions.sumOfn(5));
     }
 }
