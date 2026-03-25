@@ -1,6 +1,7 @@
 package Day3;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Solutions {
     static boolean armstrongNumber(int n) {
@@ -73,7 +74,24 @@ public class Solutions {
         return n  + sumOfn(n-1);
     }
 
+    static int findFact (int  n) {
+        if (n == 1 || n == 0) {
+            return  1;
+        }
+
+        return n  * findFact(n-1);
+    }
+
+    static void reverse (int [] arr,  int st,  int ed) {
+        if(st >= ed) {
+            return;
+        }
+        int temp = arr[st];
+        arr[st] = arr[ed];
+        arr[ed] = temp;
+        reverse(arr, st+1,   ed -1);
+    }
     public static void main(String[] args) {
-        System.out.println(Solutions.sumOfn(5));
+
     }
 }
