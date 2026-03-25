@@ -52,7 +52,20 @@ public class Solutions {
         return true;
     }
 
+    static void printGfg(int N) {
+        // code here
+        if (N == 0) return;
+        System.out.print("GFG" + " ");
+        printGfg(N-1);
+    }
+
+    static void print1toN (int n) {
+        if (n == 0) return;
+        print1toN(n -1);
+        System.out.println(n);
+    }
+
     public static void main(String[] args) {
-        System.out.println(Solutions.isPrime(4));
+      S
     }
 }
