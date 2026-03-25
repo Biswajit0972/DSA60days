@@ -36,8 +36,16 @@ public class Solutions {
         return res;
     }
 
+    public boolean isPalindrome(int x) {
+        if (x  < 0) return false;
+        int rev = reverse(x);
+        if (rev == 0) return false;
+
+        return  x == rev;
+    }
+
     public static void main(String[] args) {
         Solutions s = new Solutions();
-        System.out.println(s.reverse(1534236469));
+        System.out.println(s.isPalindrome(10));
     }
 }
