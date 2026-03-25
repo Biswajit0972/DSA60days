@@ -91,7 +91,19 @@ public class Solutions {
         arr[ed] = temp;
         reverse(arr, st+1,   ed -1);
     }
-    public static void main(String[] args) {
 
+    public static boolean isPalindrome(String s, int st,  int ed) {
+       if (st > ed) {
+           return true;
+       }
+
+       if (s.charAt(st) != s.charAt(ed)) {
+           return false;
+       }
+
+       return isPalindrome(s,  st+1, ed-1);
+    }
+    public static void main(String[] args) {
+        System.out.println(Solutions.isPalindrome("raceacar", 0, "raceacar".length() - 1));
     }
 }
