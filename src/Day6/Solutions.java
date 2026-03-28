@@ -1,16 +1,19 @@
 package Day6;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class Solutions {
     public void rotate(int[] nums, int k) {
         if (k == 0) return;
-        reverse(nums, 0, nums.length-1);
-        reverse(nums, k, nums.length-1);
-        reverse(nums,0, k-1);
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, k, nums.length - 1);
+        reverse(nums, 0, k - 1);
     }
 
-    public void reverse(int [] nums, int st,  int ed) {
+    public void reverse(int[] nums, int st, int ed) {
         if (st >= ed) {
             return;
         }
@@ -18,7 +21,7 @@ public class Solutions {
         int temp = nums[st];
         nums[st] = nums[ed];
         nums[ed] = temp;
-        reverse(nums,  st+1, ed-1);
+        reverse(nums, st + 1, ed - 1);
     }
 
     public void moveZeroes(int[] nums) {
@@ -31,15 +34,29 @@ public class Solutions {
                 nums[zero] = temp;
                 zero++;
                 st++;
-            }else {
+            } else {
                 st++;
             }
         }
     }
 
+    public static ArrayList<Integer> findUnion(int a[], int b[]) {
+        TreeSet<Integer> t = new TreeSet<>();
+
+        for (int num : a) {
+            t.add(num);
+        }
+
+        for (int num : b) {
+            t.add(num);
+        }
+
+        return new ArrayList<>(t);
+    }
+
     public static void main(String[] args) {
         Solutions s = new Solutions();
-        int [] nums = {-1,-100,3,99};
+        int[] nums = {-1, -100, 3, 99};
         s.rotate(nums, 2);
         System.out.println(Arrays.toString(nums));
     }
