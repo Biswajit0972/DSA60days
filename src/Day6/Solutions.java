@@ -21,6 +21,21 @@ public class Solutions {
         reverse(nums,  st+1, ed-1);
     }
 
+    public void moveZeroes(int[] nums) {
+        int zero = 0;
+        int st = 0;
+        while (st < nums.length) {
+            if (nums[st] != 0 && nums[zero] == 0) {
+                int temp = nums[st];
+                nums[st] = 0;
+                nums[zero] = temp;
+                zero++;
+                st++;
+            }else {
+                st++;
+            }
+        }
+    }
 
     public static void main(String[] args) {
         Solutions s = new Solutions();
