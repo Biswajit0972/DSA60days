@@ -1,5 +1,7 @@
 package Day10;
 
+import java.util.ArrayList;
+
 public class Optimize {
     public int maxProfit(int[] prices) {
         int maxProfit =  0;
@@ -32,5 +34,28 @@ public class Optimize {
         }
 
         return res;
+    }
+
+    public ArrayList<Integer> leaders(int arr[]) {
+        ArrayList<Integer> res = new ArrayList<>();
+        int n = arr.length - 1;
+
+        int rightGreater = arr[n];
+        res.addFirst(rightGreater); // last element is always a leader
+
+        for (int i = n - 1; i >= 0; i--) {
+            if (arr[i] > rightGreater) {
+                rightGreater = arr[i];
+                res.addFirst(arr[i]); // ✅ correct
+            }
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        Optimize op = new Optimize();
+        for (Integer n : op.leaders(new int[] {16,17,4,3,5,2})) {
+            System.out.print(n + " ");
+        }
     }
 }
