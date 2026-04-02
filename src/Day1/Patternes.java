@@ -1,4 +1,4 @@
-package pattern;
+package Day1;
 
 public class Patternes {
 
