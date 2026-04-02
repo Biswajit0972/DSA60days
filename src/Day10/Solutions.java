@@ -36,7 +36,35 @@ public class Solutions {
         return res;
     }
 
+    public int longestConsecutive(int[] nums) {
+        int maxL = 0;
+
+        for (int num : nums) {
+            int count = 0;
+            int el = num;
+            while (isPresent(nums, el)) {
+                el++;
+                count++;
+            }
+
+            maxL = Math.max(maxL, count);
+        }
+
+        return maxL;
+    }
+
+    public boolean isPresent(int [] nums, int el) {
+        for (int num : nums) {
+            if (num == el) {
+                return true;
+            }
+        }
+
+        return false;
+    }
     public static void main(String[] args) {
         Solutions s = new Solutions();
+
+        System.out.println(s.longestConsecutive(new int[] {100, 4, 200, 1, 3, 2}));
     }
 }
