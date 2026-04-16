@@ -23,4 +23,17 @@ public class Utils {
         }
         System.out.println("]");
     }
+
+    public static <T> void print2dArray(T [] [] arr) {
+        System.out.print("[");
+        for (T  [] list1 : arr) {
+            System.out.print("[");
+            for (T num : list1) {
+                System.out.print(num + ",");
+            }
+            System.out.print("]");
+
+        }
+        System.out.println("]");
+    }
 }
