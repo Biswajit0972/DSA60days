@@ -37,6 +37,24 @@ public class Solutions {
         return ans == -1? arr.length : ans;
     }
 
+    int upperBound(int[] arr, int target) {
+       int st = 0;
+       int ed = arr.length - 1;
+       int ans = Integer.MAX_VALUE;
+
+        while (st <=ed) {
+            int mid = st + (ed - st) /2;
+            if (arr[mid] >= target) {
+                ans = Math.min(mid, ans);
+                st = mid + 1;
+            }else {
+                ed = mid - 1;
+            }
+        }
+
+        return ans == Integer.MAX_VALUE? arr.length: ans;
+    }
+
     public static void main(String[] args) {
 
     }
